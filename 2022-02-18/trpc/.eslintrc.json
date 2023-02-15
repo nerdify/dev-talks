@@ -1,0 +1,29 @@
+{
+  "extends": ["next/core-web-vitals", "plugin:prettier/recommended"],
+  "rules": {
+    "import/order": [
+      "warn",
+      {
+        "alphabetize": {
+          "caseInsensitive": true,
+          "order": "asc"
+        },
+        "groups": ["external", "internal"],
+        "newlines-between": "always",
+        "pathGroups": [
+          {
+            "pattern": "@**/**",
+            "group": "external",
+            "position": "after"
+          },
+          {
+            "pattern": "#/**",
+            "group": "internal"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": []
+      }
+    ],
+    "no-constant-binary-expression": "error"
+  }
+}
