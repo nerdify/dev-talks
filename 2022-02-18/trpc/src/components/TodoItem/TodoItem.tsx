@@ -1,13 +1,8 @@
 import {Box, Checkbox, Flex} from '@chakra-ui/react'
-
-type Todo = {
-  completed: boolean
-  id: number
-  title: string
-}
+import type {Todo} from '@prisma/client'
 
 export interface TodoItemProps {
-  todo: Todo
+  todo: Pick<Todo, 'completed' | 'id' | 'title'>
 }
 
 export default function TodoItem({todo}: TodoItemProps) {

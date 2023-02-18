@@ -1,3 +1,5 @@
+import {useForm} from 'react-hook-form'
+
 import {
   Button,
   Flex,
@@ -13,15 +15,34 @@ import {
   ModalOverlay,
 } from '@chakra-ui/react'
 
+import trpc from '#/lib/trpc'
+
 interface TodoCreateModalProps {
   isOpen: boolean
   onClose(): void
+}
+
+interface FormData {
+  title: string
 }
 
 export default function TodoCreateModal({
   isOpen,
   onClose,
 }: TodoCreateModalProps) {
+  const context = trpc.useContext()
+  const mutation = trpc.todos.create.useMutation()
+  const {handleSubmit, register} = useForm<FormData>()
+
+  function onSubmit(data: FormData) {
+    mutation.mutate(data, {
+      onSuccess() {
+        context.todos.invalidate()
+        onClose()
+      },
+    })
+  }
+
   return (
     <Modal closeOnOverlayClick={false} isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
@@ -29,10 +50,14 @@ export default function TodoCreateModal({
         <ModalHeader>Create Todo</ModalHeader>
         <ModalCloseButton />
         <ModalBody>
-          <form id="todo-create-form">
+          <form id="todo-create-form" onSubmit={handleSubmit(onSubmit)}>
             <FormControl isRequired>
               <FormLabel>Title</FormLabel>
-              <Input />
+              <Input
+                {...register('title', {
+                  required: true,
+                })}
+              />
             </FormControl>
           </form>
         </ModalBody>
