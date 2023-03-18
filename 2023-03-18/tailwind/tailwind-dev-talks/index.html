@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./build/output.css" />
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <title>Tailwind Dev Talks</title>
+  </head>
+  <body>
+    <div class="dark:bg-back-black overflow-hidden">
+      <div class="relative max-w-screen-2xl h-screen p-20 mx-auto">
+        <div class="drop-shadow-circle">
+          <div class="circle-wrapper animate-move inset-0 [clip-path:circle(50%_at_10%_10%)]">
+            <div class="circle bg-brand-purple drop-shadow-[-10px_-10px_100px_#7353ca]"></div>
+          </div>
+        </div>
+        <div class="drop-shadow-circle-two">
+          <div class="circle-wrapper animate-move-two top-24 right-0 [clip-path:circle(50%_at_100%_100%)]">
+            <div class="circle bg-brand-rose drop-shadow-[10px_10px_100px_#964fa8]"></div>
+          </div>
+        </div>
+        <div class="w-full h-full bg-gradient-to-t from-from-gradient-white to-to-gradient-white dark:bg-gradient-to-t dark:from-to-gradient dark:to-to-gradient backdrop-blur rounded-3xl px-20">
+          <main class="h-full">
+            <div class="flex h-full justify-between items-center text-stone-700 dark:text-white">
+              <div class="flex flex-col gap-12 w-6/12">
+                <nav>
+                  <ul class="flex text-xl font-medium gap-5">
+                    <li>
+                      <a href="#">About</a>
+                    </li>
+                    <li>
+                      <a href="#">New</a>
+                    </li>
+                    <li>
+                      <a href="#">Contact Us</a>
+                    </li>
+                  </ul>
+                </nav>
+                <h1 class="text-5xl font-medium leading-10">Body Temperature</h1>
+                <p class="break-words text-lg">
+                  Body temperature measurement. Notification of hight
+                  temperature. Track changes.
+                </p>
+                <button class="font-bold rounded-[90px] p-4 bg-gradient-to-r from-brand-purple to-brand-blue drop-shadow-button hover:drop-shadow-button-hover ease-in-out duration-200 text-white">Buy</button>
+              </div>
+              <div class="relative drop-shadow-[10px_10px_50px_#ed2541]">
+                <img
+                  class="scale-105 2xl:scale-125"
+                  src="images/MP6Y3ref_VW_PF.png"
+                  alt=""
+                  aria-label=""
+                />
+                <img
+                  class="absolute inset-x-0 top-40 scale-125 2xl:scale-150 translate-x-4"
+                  src="images/45-aluminum-red-case.png"
+                  alt=""
+                  aria-label=""
+                />
+                <img class="absolute inset-x-0 top-40 scale-95 2xl:scale-110 translate-x-4 rounded-3xl" src="images/IMG_0794.GIF" />
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

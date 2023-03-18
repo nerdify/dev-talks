@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.circle-wrapper {
+    @apply absolute w-[500px] h-[500px];
+}
+
+.circle {
+    @apply w-full h-full rounded-full blur-2xl;
+}
